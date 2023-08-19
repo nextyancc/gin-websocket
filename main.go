@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -44,6 +45,7 @@ func handleWebSocket(conn *websocket.Conn) {
 
 		// 处理接收到的消息
 		// ...
+		fmt.Println("msg:", msg)
 
 		// 发送消息给客户端
 		err = conn.WriteMessage(websocket.TextMessage, []byte("Hello, client!"))
